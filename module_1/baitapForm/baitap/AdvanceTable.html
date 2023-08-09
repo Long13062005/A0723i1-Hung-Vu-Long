@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvanceTable</title>
+</head>
+<style>
+     .chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+     background-color: orange;
+  }
+  .chessboard > div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .white {
+    background-color: white;
+  }
+  .black {
+    background-color: black;
+  }
+    body {
+        background-color: orange;
+    }
+    table {
+        width: 600px;
+        height: 600px;
+        aspect-ratio: 1;
+        font-size: larger;
+        font-weight: bolder;
+        margin: 0;
+    }
+</style>
+<body>
+    <div class="chessboard">
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+            <td class="square white"></td>
+            <td class="square black"></td>
+        </tr>
+        </table>
+</div>
+
+
+    
+</body>
+</html>

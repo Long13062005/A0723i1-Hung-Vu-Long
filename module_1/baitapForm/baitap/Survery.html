@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<style>
+    html {
+        font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+    }
+
+</style>
+<body>
+    <div style="border-bottom: 1px dotted #ccc;;">
+    <h1>Market Research Survey</h1>
+    <p>Please take a few moments to complete this satisfaction survey</p>
+    </div>
+    <form>
+    <label class="bold">What is your age range?</label>
+    <div for="age" >
+        <select style="width: 50%; font-size: 120%;">
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-50">35-50</option>
+            <option value="50">50+</option>
+        </select>
+    </div>
+    <label class="bold">What is your yearly income range?</label>
+    <div>
+		<select style="width: 50%; font-size: 120%;">
+						<option
+								value="$0 - $25,000" 				>
+				<span  >$0 - $25,000</span>
+			</option>
+						<option
+								value="$25,001 - $50,000" 				>
+				<span  >$25,001 - $50,000</span>
+			</option>
+						<option
+								value="$50,001 - $100,000" 				>
+				<span  >$50,001 - $100,000</span>
+			</option>
+						<option
+								value="$100,000+" 				>
+				<span  >$100,000+</span>
+			</option>
+					</select>
+	</div>
+    <label class="bold">Gender identity</label>
+    <div>
+        <input type="radio" name="gender"/>Male<br>
+        <input type="radio" name="gender"/>Female<br>
+        <input type="radio" name="gender"/>Nonbinary<br>
+        <input type="radio" name="gender"/>Other<br>
+        <input type="text" style=" margin-left: 25px; " size="20"/><br>
+    </div>
+    <label class="bold">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+    <div>
+        <input type="checkbox" name="products1"/>Product 1<br>
+        <input type="checkbox" name="products2"/>Product 2<br>
+        <input type="checkbox" name="products3"/>Product 3<br>
+    </div>
+    <label class="bold">How often would you use our new product?</label>
+    <div>
+        <input type="radio" name="often"/>Daily<br>
+        <input type="radio" name="often"/>Weekly<br>
+        <input type="radio" name="often"/>Monthly<br>
+    </div>
+    <label class="bold" >What would you pay for the new product?</label>
+    <div>
+        <table>
+            <tr>   
+      <td><span>$<input type="text" size="10"></span></td>
+      <td><span>. <input type="text" size="1px"></span></00td>
+        </tr>
+        <tr>
+            <td >  Dollars</td>
+            <td>Cents</td>
+        </tr>
+        </table>
+        </div>
+<label class="bold">What features would you like to see in the new product.</label><br>
+<textarea rows="10" cols="50"></textarea>
+<div>
+    <label class="bold" >Please rate your level of agreement with the following statements</label>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>&nbsp;</th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+        <tr>
+            <td class="bold">Our products are priced fairly.</td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>1</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>2</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>3</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>4</label> </td>
+            
+        </tr>
+        <tr>
+            <td class="bold">Our products are high quality.</td>
+            <td><input type="radio" name="op2" tabindex="0"> <label>1</label> </td>
+            <td><input type="radio" name="op2" tabindex="0"> <label>2</label> </td>
+            <td><input type="radio" name="op2" tabindex="0"> <label>3</label> </td>
+            <td><input type="radio" name="op2" tabindex="0"> <label>4</label> </td>
+        </tr>
+        <tr>
+            <td class="bold">You would recommend our product to a friend or coworker.</td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>1</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>2</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>3</label> </td>
+            <td><input type="radio" name="op1" tabindex="0"> <label>4</label> </td>
+            
+        </tr>
+    </table>
+</div>
+<input type="submit">
+</form>
+</body>
+</html>

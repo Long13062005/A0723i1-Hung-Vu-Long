@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleForm</title>
+    <style>
+        .sothich {
+            color: white;
+            background-color: orangered;
+            text-align: center;
+          
+         
+            
+            
+        }
+        form {
+            background-color: white;
+            
+        }
+       html {
+        background-color: #D6FEFF;
+        width: 50%;
+       }
+    </style>
+</head>
+<body>
+    <form action="http://www.google.com" method="get">
+        <div style="background-color: white;">
+        <div class="sothich">
+            <h1 style=" border: 10px solid white ;">Sở thích của bạn</h1>
+        </div>
+        <table >
+            
+            <tr>
+                <td style="color: blue;" >Họ và tên</td>
+                <td><input type="text" name="name" size="20"/></td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Email</td>
+                <td><input type="email" name="email" size="15"/></td>
+            </tr>
+            <tr>
+                <td style="color: blue; vertical-align: top;" >Sở thích</td>
+                <td>
+                    <table style="color: orange;">
+                
+                        <tr>
+                        
+                        <td><input type="checkbox" />Thể thao</td>
+                        <td><input type="checkbox" />Âm nhạc</td>
+                        <td><input type="checkbox" /> Đọc sách</td>
+                        </tr>
+                        <tr>
+                            
+                        <td><input type="checkbox" />Lướt web</td>
+                        <td><input type="checkbox" />Chơi game</td>
+                        <td><input type="checkbox" />Điện ảnh</td>
+                        </tr>
+                        <tr>
+
+                            <td><input type="checkbox" />Du lịch</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr >
+                <td></td>
+                <td><input type="submit" value="Gửi thông tin"><input type="reset" value="Nhập lại"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </form>
+    <form style="background-color: #FFFDA9;" action="http://www.google.com" method="get">
+        <div>
+            <h1 style="color: blue; background-color: #D6FEFF; font-size: 20px; border: 5px solid #FFFDA9;">Đăng ký học viên</h1>
+        </div>
+        <table>
+            <tr>
+                <td style="color: blue;">Họ và tên</td>
+                <td><input type="text" name="name" size =25/></td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Ngày sinh</td>
+                <td><input type="text" name="date" size="10"/></td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Giới tính</td>
+                <td><input type="radio" name="gender" checked/>Nam<input type="radio" name="gender" />Nữ</td>
+            </tr>
+            <tr>
+                <td style="color: blue; vertical-align: top;">Địa chỉ</td>
+                <td><textarea cols="20" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Lớp</td>
+                <td>
+                    <select >
+                        <option value="lop">--Chọn lớp--</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Email</td>
+                <td><input type="email" name="email" size="20"/></td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Điện thoại</td>
+                <td><input type="text" name="phone" size="20"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Đăng ký"/><input type="button" value="Nhập lại"/></td>
+            </tr>
+        </table>
+
+    </form>
+    
+</body>
+</html>
