@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi tiền</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td><input id="soluong" type="number"></td>
+            <td>
+                <select id="From">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                </select>
+                
+            </td>
+            <td>
+                <select id="to">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td><button onclick="chuyendoi()" style="background-color: palevioletred; color: aliceblue;">Convert</button></td>
+        </tr>
+    </table>
+    <p id="ketqua"></p>
+    <script>
+        function chuyendoi() {
+            let a = document.getElementById('soluong').value;
+            let b = document.getElementById('to').value;
+            let c = document.getElementById('From').value;
+            let ketqua;
+
+            switch (c) {
+                case 'USD':
+                    if (b == 'VND') {
+                        ketqua = "Kết quả : " + (a * 23000) + 'Đ';
+                    } else if (b == 'USD') {
+                        ketqua = "Kết quả : " + a + '$';
+                    }
+                    break;
+                case 'VND' : 
+                if (b == 'USD') {
+                        ketqua = "Kết quả : " + (a / 23000) + '$';
+                    } else if (b == 'VND') {
+                       ketqua = "Kết quả : " + a + 'Đ';
+                    }
+                    break;
+                    default:
+                        ketqua = "Kết quả : " + " " + b;
+                        break;
+            }
+            document.getElementById("ketqua").innerHTML =  ketqua;
+        }
+
+    </script>
+</body>
+</html>

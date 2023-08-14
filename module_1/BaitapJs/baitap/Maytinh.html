@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <label for="so1"><input type="number" id="so1" placeholder="Nhập số vào đây"></label>
+    <label for="so2"><input type="number" id="so2" placeholder="Nhập số vào đây"></label>
+    <br>
+    <button onclick="cong()">+</button>
+    <button onclick="tru()">-</button>
+    <button onclick="nhan()">x</button>
+    <button onclick="chia()">:</button>
+    <p id="result"></p>
+    <script>
+       
+        function cong() {
+            let a = parseInt(document.getElementById("so1").value);
+        let b = parseInt(document.getElementById("so2").value);
+        let result;
+            result = a + b;
+            document.getElementById("result").innerHTML= 'kết quả là ' + result;
+        }
+        function tru() {
+            let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let result;
+            result = a - b;
+            document.getElementById("result").innerHTML= 'kết quả là ' + result;
+        }
+        function nhan() {
+            let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let result;
+            result = a * b;
+            document.getElementById("result").innerHTML= 'kết quả là ' + result;
+        }
+        function chia() {
+            let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let result;
+            result = a / b;
+            document.getElementById("result").innerHTML= 'kết quả là ' + result;
+        }
+    </script>
+</body>
+</html>
