@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switchcase</title>
+</head>
+<body>
+    <h1>Kiểm tra số ngày trong tháng</h1>
+    <input type="number" min="1" max="12" id="month" placeholder="Nhập tháng" style="width:10%">
+    <button onclick="check_month()">Kiểm tra</button>
+    <p id="result">Đây là chỗ hiển thị kết quả</p>
+    <script>
+        var t1 = '1';
+        var t2 = '2';
+        var t3 = '3';
+        var t4 = '4';
+        var t5 = '5';
+        var t6 = '6';
+        var t7 = '7';
+        var t8 = '8';
+        var t9 = '9';
+        var t10 = '10';
+        var t11 = '11';
+        var t12 = '12';
+        function check_month() {
+
+        let month = document.getElementById("month").value;
+        switch(month) {
+            
+            case t1:
+            case t3:
+            case t5:
+            case t7:
+            case t8:
+            case t10:
+            case t12:
+            document.getElementById("result").innerHTML = "Tháng " + month + " có 31 ngày";
+            break;
+            case t2:
+            document.getElementById("result").innerHTML = "Tháng " + month + " có 28 hoặc 29 ngày";
+            break;
+            case t4:
+            case t6:
+            case t11:
+            case t9:
+            document.getElementById("result").innerHTML = "Tháng " + month + " có 30 ngày";
+            break;    
+            default:
+            document.getElementById("result").innerHTML = "Vui lòng nhập lại tháng";
+        }
+}
+    </script>
+</body>
+</html>

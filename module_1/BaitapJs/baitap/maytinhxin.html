@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+    <style>
+        form {
+            border : 10px solid black;
+            width: 20%;
+            background-color: whitesmoke ;
+            text-align: center;
+        }
+        button {
+            color: blue;
+            width: 100%;
+            text-align: center;
+        }
+        input { 
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="view" placeholder="CASINO88"/>
+        <div>
+            <table>
+                <tr>
+                    <td><button type="button" value="1" onclick="inputvalue(this.value)" >1</button></td>
+                    <td><button type="button"  value="2" onclick="inputvalue(this.value)" >2</button></td>
+                    <td><button type="button"  value="3" onclick="inputvalue(this.value)" >3</button></td>
+                    <td><button type="button"  value="+" onclick="inputvalue(this.value)" >+</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button"  value="4" onclick="inputvalue(this.value)" >4</button></td>
+                    <td><button value="5" type="button"  onclick="inputvalue(this.value)" >5</button></td>
+                    <td><button value="6" type="button"  onclick="inputvalue(this.value)" >6</button></td>
+                    <td><button value="-" type="button"  onclick="inputvalue(this.value)" >-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button"  value="7" onclick="inputvalue(this.value)" >7</button></td>
+                    <td><button value="8" type="button"  onclick="inputvalue(this.value)" >8</button></td>
+                    <td><button value="9" type="button"  onclick="inputvalue(this.value)" >9</button></td>
+                    <td><button value="*" type="button"  onclick="inputvalue(this.value)" >X</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button"  onclick="xoa()" >C</button></td>
+                    <td><button value="0" type="button"  onclick="inputvalue(this.value)" >0</button></td>
+                    <td><button onclick="ketqua()" type="button"  >=</button></td>
+                    <td><button value="/" onclick="inputvalue(this.value)" type="button"  >/</button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <script>
+        let view = document.getElementById('view');
+        function inputvalue(value) {
+            view.value += value;
+        }
+        function ketqua() {
+            let result = eval(view.value);
+            view.value = result;
+        }
+        function xoa() {
+            view.value = '';
+        }
+
+    </script>
+</body>
+</html>

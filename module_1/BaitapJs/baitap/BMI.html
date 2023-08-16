@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+
+</head>
+<body>
+    <img src="https://james.codegym.vn/pluginfile.php/64923/mod_assign/intro/1.png" /><br>
+    <label>Chiều cao của bạn(m) : </label>
+    <input placeholder="điền chiều cao của bạn vào đây" id="height" name="height"/>
+    <label>Cân nặng của bạn(kg) : </label>
+    <input placeholder="điền cân nặng của bạn vào đây" id="weight" name="weight"/>
+    <button onclick="bmi()">Tính</button>
+    <p id="ketqua"></p>
+    <p id="benh"></p>
+    <script>
+       
+        function bmi() {
+                var height = document.getElementById("height").value;
+                var weight = document.getElementById("weight").value;
+                var bmi;
+                var benh = " ";
+            bmi = weight / ( height * height );
+            if (bmi < 18)
+               benh = 'Gầy';
+            else if (bmi < 25.0)
+                benh = 'Bình Thường';
+            else if (bmi < 30.0)
+                benh = 'Thừa cân';
+            else
+                benh = 'Béo phì';
+
+            document.getElementById("ketqua").innerHTML = 'BMI của bạn :' + bmi + ", Bạn tương ứng với " + benh;
+        }
+    </script>
+</body>
+</html>
