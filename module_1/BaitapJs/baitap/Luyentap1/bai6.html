@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoahồng
+        
+    </title>
+</head>
+<body>
+    <h1>Tính hoa hồng nhận được ($)</h1>
+    <input type="number" id="doanhthu" placeholder="Nhập mức doanh số bán hàng "/>
+    <button onclick="kiemtra()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function kiemtra() {
+            let doanhthu = document.getElementById('doanhthu').value;
+            let result ;
+            if( doanhthu <= 1000 && doanhthu > 0 ) {
+                result = 'Hoa hồng bạn nhận được là 5% của sản phẩm ';
+            } else if ( doanhthu > 1000 && doanhthu <= 5000) {
+                result = 'Hoa hồng bạn nhận được là 8% của sản phầm';
+            } else if ( doanhthu > 5000) {
+                result = 'Hoa hồng bạn nhận được là 10% của sản phầm';
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+    
+</body>
+</html>

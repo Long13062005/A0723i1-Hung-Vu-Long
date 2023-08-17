@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kiểm tra số a có chia hết cho số b không?</h1>
+    <input type="number" id="a" placeholder="nhập số a vào đây">
+    <input type="number" id="b" placeholder="nhập số b vào đây">
+    <button onclick="tinh()">Tính</button>
+    <script>
+        function tinh() {
+            let a =document.getElementById("a").value;
+            let b =document.getElementById("b").value;
+            if (!(a % b)) {
+                alert('a chia hết cho b');
+            } else {
+                alert('a không chia hết cho b');
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tìm số lớn nhất trong 3 số nguyên </h1>
+    <input type="number" id="x" placeholder="Số đầu tiên" required/>
+    <input type="number" id="y" placeholder="Số thứ hai" required/>
+    <input type="number" id="z" placeholder="Số thứ ba" required/>
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <script>
+        function kiemtra() {
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+            let z = document.getElementById("z").value;
+            if ( x > y && x > z) {
+                alert(x + ' là số có giá trị lớn nhất.');
+            } else if  (y > x && y > z) {
+                alert(y + ' là số có giá trị lớn nhất');
+            } else if (z > x && z > y)  {
+                alert(z + ' là số có giá trị lớn nhất');
+            } else {
+                alert('Thiếu số ');
+            }
+        }
+    </script>
+</body>
+</html>

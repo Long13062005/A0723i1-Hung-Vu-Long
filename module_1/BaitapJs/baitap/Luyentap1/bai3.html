@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nhập số nguyên bất kỳ</h1>
+    <input type="number" id="number"/>
+    <button onclick="kiemtra()" >Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemtra() {
+            let x = document.getElementById("number").value;
+            let result;
+            if (x > 0) {
+                result = 'Vì đây là số ' + x + ' nên số nguyên này lớn hơn 0';
+            } else if (x < 0) {
+                result = 'Vì đây là số ' + x + ' nên số nguyên này bé hơn 0';
+        } else {
+            result = 'Số này là số 0 mà cần gì kiểm tra ';
+
+        } document.getElementById('result').innerHTML = result;
+    }
+    </script>
+</body>
+</html>

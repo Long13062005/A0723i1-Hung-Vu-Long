@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socuoc</title>
+</head>
+<body>
+    <h1>Tính số cước của hộ gia đình</h1>
+    <input type="number" id="sophut" placeholder="Nhập số phút"/>
+    <button onclick="Tinh()" >Tính</button>
+    <p id="ketqua"></p>
+<script>
+    
+    function Tinh() {
+    let sophut = document.getElementById("sophut").value;
+    let phicodinh = 25;
+    let phi = 0;
+     let tong;
+        if ( sophut > 200) {
+            phi = (sophut - 200) * 200 + 150 * 400 + 50 * 600; 
+        } else if (sophut > 50) {
+            phi = (sophut - 50) * 400 + 50 * 600;
+        } else {
+            phi = sophut * 600;
+        }
+        tong = phi * 0.01 + phicodinh;
+        document.getElementById('ketqua').innerHTML="Tổng tiền bạn phải nộp là " + tong +" VNĐ" ;
+    }
+
+</script>    
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cách xếp hạng học lực của học sinh</h1>
+    <p>Điểm kiểm tra</p>
+    <input type="number" min="0" max="10" id="x"/>
+    <p>Điểm thi giữa kỳ</p>
+    <input type="number" min="0" max="10" id="y"/>
+    <p>Điểm thi cuối kỳ</p>
+    <input type="number" min="0" max="10" id="z"/>
+    <br>
+    <br>
+    <br>
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function kiemtra() {
+            let x = parseInt(document.getElementById("x").value);
+            let y = parseInt(document.getElementById("y").value);
+            let z = parseInt(document.getElementById("z").value);
+            let result = (x + y*2 + z*3)/6;
+            if (result >= 9) {
+                result = 'Học lực của bạn là ' + result + ', Bạn có học lực xuất sắc.';
+            } else if (result >= 8) {
+                result = 'Học lực của bạn là ' + result + ', Bạn có học lực giỏi.';
+            } else if (result >= 6.5) {
+                result = 'Học lực của bạn là ' + result + ', Bạn có học lực khá.';
+            } else if (result >= 3.5) {
+                result = 'Học lực của bạn là ' + result + ', Bạn có học lực trung bình.';
+            } else {
+                result = 'Học lực của bạn là ' + result + ', Bạn có học lực kém.';
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

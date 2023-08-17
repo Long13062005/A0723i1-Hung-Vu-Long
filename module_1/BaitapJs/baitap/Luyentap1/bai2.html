@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Điều kiện để học lớp 10</h1>
+    <input type="number" id="age" placeholder="Nhập tuổi vào đây" min="1" max="100">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="ketqua"></p>
+    <script>
+        function kiemtra() {
+            let age = document.getElementById("age").value;
+            let result;
+            if (age <= 15) {
+                result = 'Bạn không đủ tuổi để vào lớp 10';
+            } else {
+                result = 'Vì bạn ' + age + ' Nên bạn đã đủ tuổi vào lớp 10'
+            }
+            document.getElementById('ketqua').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
