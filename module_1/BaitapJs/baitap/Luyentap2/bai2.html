@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mtofeet</title>
+</head>
+<body>
+    <h1>Chuyển mét sang feet</h1>
+    <input id="m" type="number" placeholder="Nhập mét "/>
+    <button onclick="tinh()">Convert</button>
+    <p id="feet"></p>
+    <script>
+        function tinh() {
+            let m = document.getElementById("m").value;
+            let feet = m * 3.2808;
+            document.getElementById("feet").innerHTML = 'Đã chuyển đổi thành ' + feet + ' ft';
+        }
+    </script>
+</body>
+</html>

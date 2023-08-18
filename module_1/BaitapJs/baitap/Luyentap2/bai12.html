@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Interest Calculator</title>
+</head>
+<body>
+  <h1>Lãi suất ngân hàng</h1>
+  
+  <label for="principalAmount">Số ban đầu</label>
+  <input type="number" id="principalAmount" step="any" placeholder="Nhập giá trị ban đầu">
+  
+  <label for="numberOfMonths">Số tháng:</label>
+  <input type="number" id="numberOfMonths" placeholder="Số tháng">
+  
+  <label for="monthlyInterestRate">Lãi suất tháng (%):</label>
+  <input type="number" id="monthlyInterestRate" step="any" placeholder="Lãi suất tháng">
+  
+  <button id="calculateButton">Tính</button>
+  
+  <p id="interestResult"></p>
+  
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      const principalAmount = parseFloat(document.getElementById("principalAmount").value);
+      const numberOfMonths = parseInt(document.getElementById("numberOfMonths").value);
+      const monthlyInterestRate = parseFloat(document.getElementById("monthlyInterestRate").value) / 100;
+      
+      const calculatedInterest = calculateCompoundInterest(principalAmount, numberOfMonths, monthlyInterestRate);
+      
+      document.getElementById("interestResult").textContent = `Total Interest: $${calculatedInterest.toFixed(2)}`;
+    });
+
+    function calculateCompoundInterest(principal, months, interestRate) {
+      let totalAmount = principal;
+
+      for (let i = 0; i < months; i++) {
+        totalAmount += totalAmount * interestRate;
+      }
+
+      return totalAmount - principal;
+    }
+  </script>
+</body>
+</html>

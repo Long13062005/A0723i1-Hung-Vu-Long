@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dientich</title>
+</head>
+<body>
+    <h1>Tính diện tích hình vuông</h1>
+    <input id="canh" type="number" placeholder="Nhập giá trị cạnh" />
+    <button onclick="tinh()">Tính</button>
+    <p id="ketqua"></p>
+    <script>
+         function tinh() {
+            let canh = document.getElementById("canh").value;
+            let Dientich = canh * canh;
+            document.getElementById("ketqua").innerHTML = 'Ta có kết quả ' + Dientich +' cm^2';
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Giải phương trình bậc 2 y = ax^2 + bx + c</h1>
+    <input type="number" id="a" placeholder="a"/>
+    <input type="number" id="b" placeholder="b"/>
+    <input type="number" id="c" placeholder="c"/>
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+            const a = parseInt(document.getElementById("a").value);
+            const b = parseInt(document.getElementById("b").value);
+            const c = parseInt(document.getElementById("c").value);
+            let delta = b*b-4*a*c;
+            let sqdelta = Math.sqrt(delta);
+            let result;
+            let x1,x2;
+
+            if ( delta > 0) {
+                x1 = (-b + sqdelta )/ (2 *a);
+                x2 = (-b - sqdelta )/ (2 *a);
+                result = `Phương trình có 2 nghiệm phân biệt có x1 = ${x1} và x2 = ${x2}`;
+            } else if ( delta < 0 ) {
+                result = 'Phương trình vô nghiệm';
+            } else if ( delta == 0) {
+                x1 = x2 = (-b)/(2 * a);
+                result = `Phương trình có nghiệm kép có x = ${x1}`
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính giá điện (kWh)</h1>
+    <input type="number" id="dien" placeholder="Nhập số điện tiêu thụ"/>
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+            let dien = parseInt(document.getElementById("dien").value);
+            let result = 0;
+            const gia1 = 1000;//Giá ở 1000kWh đầu tiên
+            const gia2 = 1500;//Giá cho tiếp theo
+            if (dien <= 1000) {
+                result = dien * gia1;
+            } else {
+                result = dien * gia1 + (dien - 1000) * gia2;
+            }
+            document.getElementById("result").innerHTML = `Vậy ta cần phải trả ${result} VNĐ`;
+        }
+    </script>
+</body>
+</html>

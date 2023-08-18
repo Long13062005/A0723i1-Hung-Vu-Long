@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+    <h1>Tính diện tích hình chữ nhật</h1>
+    <input type="number" id="chieudai" placeholder="Chiều dài(cm)" />
+    <input type="number" id="chieurong" placeholder="Chiều rộng(cm)"/>
+    <button onclick="tinh()">Tính</button>
+    <p id="ketqua"></p>
+    <script>
+        function tinh() {
+            let x = document.getElementById('chieudai').value;
+            let y = document.getElementById('chieurong').value;
+            let dientich = x * y;
+            document.getElementById('ketqua').innerHTML = 'Ta có diện tích là ' + dientich +' cm^2';
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kiểm tra xem đây có phải là tam giác không???</h1>
+    <input id="a" type="number" placeholder="a"/>
+    <input id="b" type="number" placeholder="b"/>
+    <input id="c" type="number" placeholder="c"/>
+    <button onclick="tinh()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            let c = document.getElementById("c").value;
+            let result;
+            if (a <= 0 || b <= 0 || c <= 0 ) {
+                result = "Cạnh phải lớn hơn 0";
+            } else if (a + b > c && a + c > b && b + c > a) {
+                    result = "Đây là một tam giác ";
+                }else   { 
+                    result = "Không phải 3 cạnh tam giác";
+                }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

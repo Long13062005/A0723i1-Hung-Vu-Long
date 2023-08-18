@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temparature</title>
+</head>
+<body>
+    <h1>Chuyển đổi nhiệt đồ C thành F</h1>
+    <input placeholder="Nhập °C" id="C">
+    <button onclick="tinh()" >Tính</button>
+    <p id="ketqua"></p>
+    <script>
+        function tinh() {
+            let C = parseInt(document.getElementById("C").value);
+            let F = C * 9/5 + 32 ;
+            document.getElementById("ketqua").innerHTML = 'Đã chuyển qua ' + F + ' °F';
+
+        }
+        
+    </script>
+</body>
+</html>

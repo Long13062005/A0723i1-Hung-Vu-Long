@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích tam giác vuông</title>
+</head>
+<body>
+    <h1>Tính diện tích tam giác vuông </h1>
+    <img src="https://th.bing.com/th/id/R.8034ff6bdda7b54c3b8ca79762156203?rik=V06PdRj0KMkFmw&pid=ImgRaw&r=0" alt="Giả sử như hình trên"/>
+    <p style="font-size: 20px;">Giả sử như hình trên</p>
+    <input type="number" id="AB" placeholder="Nhập giá trị cạnh AB(cm)"/>
+    <input type="number" id="BC" placeholder="Nhập giá trị cạnh BC(cm)"/>
+    <button onclick="tinh()">Diện tích</button>
+    <p id="ketqua"></p>
+    <script>
+        function tinh() {
+            let x = document.getElementById("AB").value;
+            let y = document.getElementById("BC").value;
+            let Dientich = (x*y)/2;
+            document.getElementById("ketqua").innerHTML = 'Diện tích hình tam giác vuông ' + Dientich + ' cm^2';
+        }
+    </script>
+
+    
+</body>
+</html>

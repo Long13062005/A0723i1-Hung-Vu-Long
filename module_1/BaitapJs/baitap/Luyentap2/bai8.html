@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age</title>
+</head>
+<body>
+    <h1>bạn có phải người không ???</h1>
+    <input id="age" type="number" placeholder="Nhập số tuổi của bạn"/>
+    <button onclick="tinh()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+            let age = document.getElementById('age').value;
+            let result;
+            if (age >= 0 && age <= 120) {
+                result = `Bạn có số tuổi là ${age} nên bạn là người trái đất`;
+            } else {
+                result = `Bạn là một cái gì đấy không phải người`;
+            } 
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
