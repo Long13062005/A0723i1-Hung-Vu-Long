@@ -16,7 +16,7 @@
     <label for="sinhhoc">Điểm Sinh Học</label>
         <input type="number" id="sinhhoc"/>
       
-        <button onclick="Tinhtong();" value="Bấm vào để tính tổng và điểm trung bình" >Tính</button>
+        <button onclick="tinhtong();" value="Bấm vào để tính tổng và điểm trung bình" >Tính</button>
         </div>
         <hr>
         <div>
@@ -37,7 +37,7 @@
             <p id="ketquachuvi"></p>
         </div>
     <script>
-        function Tinhtong() {
+        function tinhtong() {
             var a = parseInt(document.getElementById("vatly").value);
             var b = parseInt(document.getElementById("hoahoc").value);
             var c = parseInt(document.getElementById("sinhhoc").value);
