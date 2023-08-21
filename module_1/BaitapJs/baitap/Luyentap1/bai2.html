@@ -14,9 +14,11 @@
         function kiemtra() {
             let age = document.getElementById("age").value;
             let result;
-            if (age <= 15) {
+            if (age <= 15 ) {
+                
                 result = 'Bạn không đủ tuổi để vào lớp 10';
             } else {
+                age = Math.round(age);
                 result = 'Vì bạn ' + age + ' Nên bạn đã đủ tuổi vào lớp 10'
             }
             document.getElementById('ketqua').innerHTML = result;

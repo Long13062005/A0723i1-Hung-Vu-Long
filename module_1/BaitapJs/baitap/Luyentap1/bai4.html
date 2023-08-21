@@ -16,13 +16,33 @@
             let x = document.getElementById("x").value;
             let y = document.getElementById("y").value;
             let z = document.getElementById("z").value;
-            if ( x > y && x > z) {
-                alert(x + ' là số có giá trị lớn nhất.');
-            } else if  (y > x && y > z) {
+            if ( x > y && x > z && y > z ) {
+                alert(x + ' là số có giá trị lớn nhất. ');
+                alert(y + ' là số có giá trị lớn nhì. ');
+                alert(z + ' là số có giá trị nhỏ nhất. ');
+            } else if  (y > x && y > z && x > z) {
                 alert(y + ' là số có giá trị lớn nhất');
-            } else if (z > x && z > y)  {
+                alert(x + ' là số có giá trị lớn nhì');
+                alert(z + ' là số có giá trị nhỏ nhất');
+            } else if (z > x && z > y && x > y)  {
                 alert(z + ' là số có giá trị lớn nhất');
-            } else {
+                alert(x + ' là số có giá trị lớn nhì');
+                alert(y + ' là số có giá trị nhỏ nhất');
+            } else if ( x > y && x > z && z > y ) {
+                alert(x + ' là số có giá trị lớn nhất. ');
+                alert(z + ' là số có giá trị lớn nhì. ');
+                alert(y + ' là số có giá trị nhỏ nhất. ');
+
+            } else if  (y > x && y > z && z > x) {
+                alert(y + ' là số có giá trị lớn nhất');
+                alert(z + ' là số có giá trị lớn nhì');
+                alert(x + ' là số có giá trị nhỏ nhất');
+            } else if (z > x && z > y && y > x)  {
+                alert(z + ' là số có giá trị lớn nhất');
+                alert(y + ' là số có giá trị lớn nhì');
+                alert(x + ' là số có giá trị nhỏ nhất');
+            }
+             else {
                 alert('Thiếu số ');
             }
         }
