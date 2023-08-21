@@ -13,8 +13,15 @@
     <script>
          function tinh() {
             let canh = document.getElementById("canh").value;
-            let Dientich = canh * canh;
-            document.getElementById("ketqua").innerHTML = 'Ta có kết quả ' + Dientich +' cm^2';
+            let Dientich;
+            if (canh >= 0) { 
+            Dientich = canh * canh; 
+            document.getElementById("ketqua").innerHTML = 'Ta có kết quả ' + Dientich +' cm^2'; 
+        }
+            else {
+                document.getElementById("ketqua").innerHTML = 'Không có giá trị'; 
+
+            }
          }
     </script>
 </body>

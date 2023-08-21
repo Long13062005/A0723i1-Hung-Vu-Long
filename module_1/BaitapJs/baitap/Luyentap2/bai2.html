@@ -13,8 +13,13 @@
     <script>
         function tinh() {
             let m = document.getElementById("m").value;
-            let feet = m * 3.2808;
-            document.getElementById("feet").innerHTML = 'Đã chuyển đổi thành ' + feet + ' ft';
+            let feet;
+            if (m >= 0) {
+                 feet = m * 3.2808;
+                  document.getElementById("feet").innerHTML = 'Đã chuyển đổi thành ' + feet + ' ft';
+            } else {
+                document.getElementById("feet").innerHTML = 'Không có giá trị';
+            }
         }
     </script>
 </body>

@@ -15,8 +15,13 @@
         function tinh() {
             let x = document.getElementById('chieudai').value;
             let y = document.getElementById('chieurong').value;
-            let dientich = x * y;
-            document.getElementById('ketqua').innerHTML = 'Ta có diện tích là ' + dientich +' cm^2';
+            let dientich;
+            if ( x >= 0 && y >= 0 ) {
+                dientich = x * y;
+                document.getElementById('ketqua').innerHTML = 'Ta có diện tích là ' + dientich +' cm^2';
+            } else {
+                document.getElementById('ketqua').innerHTML = 'Không có giá trị';
+            }
         }
     </script>
     
