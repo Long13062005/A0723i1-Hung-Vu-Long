@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateFibonacci(count) {
+  const fibonacciArray = [0, 1];
+
+  for (let i = 2; i < count; i++) {
+    const nextFibonacci = fibonacciArray[i - 1] + fibonacciArray[i - 2];
+    fibonacciArray.push(nextFibonacci);
+  }
+
+  return fibonacciArray;
+}
+
+function sumFibonacciNumbers(count) {
+  const fibonacciNumbers = generateFibonacci(count);
+  return fibonacciNumbers.reduce((sum, number) => sum + number, 0);
+}
+
+const numberOfNumbers = 20;
+const sumOfFibonacciNumbers = sumFibonacciNumbers(numberOfNumbers);
+
+document.write(`Tổng của ${numberOfNumbers} số đầu tiên trong dãy Fibonacci là: ${sumOfFibonacciNumbers}`);
+
+    </script>
+</body>
+</html>

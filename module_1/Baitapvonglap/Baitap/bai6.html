@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumNumbersDivisibleBy(divisor, count) {
+  let sum = 0;
+  let number = 1;
+  let foundCount = 0;
+
+  while (foundCount < count) {
+    if (number % divisor === 0) {
+      sum += number;
+      foundCount++;
+    }
+    number++;
+  }
+
+  return sum;
+}
+
+const divisor = 7;
+const numberOfNumbers = 30;
+const sumOfNumbersDivisibleBy7 = sumNumbersDivisibleBy(divisor, numberOfNumbers);
+
+document.write(`Tổng của ${numberOfNumbers} số chia hết cho ${divisor} đầu tiên trong các số tự nhiên là: ${sumOfNumbersDivisibleBy7}`);
+
+    </script>
+</body>
+</html>

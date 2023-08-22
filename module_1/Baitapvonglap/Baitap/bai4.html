@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              function findFirstFibonacciDivisibleBy(divisor) {
+  let previous = 0;
+  let current = 1;
+  
+  while (true) {
+    const next = previous + current;
+    if (next % divisor === 0) {
+      return next;
+    }
+    
+    previous = current;
+    current = next;
+  }
+}
+
+const divisor = 5;
+const firstFibonacciDivisibleBy5 = findFirstFibonacciDivisibleBy(divisor);
+document.write(`Số đầu tiên trong dãy Fibonacci chia hết cho ${divisor} là: ${firstFibonacciDivisibleBy5}`);
+    </script>
+</body>
+</html>
+</body>
+</html>
