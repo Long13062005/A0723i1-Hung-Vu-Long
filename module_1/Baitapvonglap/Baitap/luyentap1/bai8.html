@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Game Đoán Số</h1>
+    <button onclick="doan()">Bắt đầu chơi</button>
+    <script>
+        
+        function doan() {
+            let chonso = parseInt(prompt("Chọn số đoán trong khoảng từ 0 - ???"));
+            let so = Math.floor(Math.random() * chonso);
+            console.log(`Cheat vậy chơi làm gì nữa trời, số nè ${so}`);
+            let sodoan = parseInt(prompt("Nhập số bạn đoán trong khoảng đó"));
+            let count = 0;
+            while (so !== sodoan) {
+                count++;
+                if (count == 4) {
+                    break;
+                } else if (sodoan < so) {
+                    alert("Số bạn cần đoán lớn hơn số " + sodoan);
+                } else if (sodoan > so) {
+                    alert("Số banh cần đoán nhỏ hơn số " + sodoan);
+                }
+                sodoan = parseInt(prompt("Nhập số bạn đoán trong khoảng đó"));
+            } 
+            if (count == 4) {
+                document.write("Đã hết lần đoán hãy bấm vào nút thử lại ở dưới" + '<br />' + '<button id="resetButton" onclick="taiLai()">Thử lại</button>');
+            } else { 
+                document.write("bạn này chơi cheat ? Chứng minh lại đi " + '<br />' + '<button id="resetButton" onclick="taiLai()">Thử lại</button>');}
+
+        }
+        function taiLai() {
+            window.location.reload()
+        }
+    </script>
+    
+</body>
+</html>

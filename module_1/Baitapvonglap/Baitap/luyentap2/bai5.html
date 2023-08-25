@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var tien = parseInt(prompt("Nhập số tiền ban đầu")); // Số tiền ban đầu
+        var thang = parseFloat(prompt("Số tháng cho vay")); // Số tháng cho vay
+        var lai = parseInt(prompt("Lãi xuất hàng tháng")); // Lãi xuất hàng tháng
+
+     for(let i=1; i<= thang; i++){
+       let laixuat = tien * lai;
+         tien += laixuat;
+     }
+     var tong = tien - tien/(1+thang);
+     document.write("Tổng số tiền lãi sau thời gian là: " + tong);
+     
+    </script>
+</body>
+</html>

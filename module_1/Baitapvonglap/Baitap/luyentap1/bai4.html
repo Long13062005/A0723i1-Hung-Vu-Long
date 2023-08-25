@@ -15,13 +15,13 @@
 </head>
 <body>
     <script>
-              function findFirstFibonacciDivisibleBy(divisor) {
+              function tim(sochia) {
   let previous = 0;
   let current = 1;
   
   while (true) {
     const next = previous + current;
-    if (next % divisor === 0) {
+    if (next % sochia === 0) {
       return next;
     }
     
@@ -30,9 +30,9 @@
   }
 }
 
-const divisor = 5;
-const firstFibonacciDivisibleBy5 = findFirstFibonacciDivisibleBy(divisor);
-document.write(`Số đầu tiên trong dãy Fibonacci chia hết cho ${divisor} là: ${firstFibonacciDivisibleBy5}`);
+const sochia = 5;
+const sochia5 = tim(sochia);
+document.write(`Số đầu tiên trong dãy Fibonacci chia hết cho ${sochia} là: ${sochia5}`);
     </script>
 </body>
 </html>

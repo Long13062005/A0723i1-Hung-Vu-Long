@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<div style="position: absolute; " >')
+        let sao = '*';
+        let length = parseFloat(prompt("Chiều dài là :"))
+        let width = parseFloat(prompt("Chiều rộng là :"))
+        if (length > 0 && width > 0) { 
+        for (var i = 1; i <= width; i++) {
+            for (var j = 1; j <= length; j++) {
+                if (i == 1 || i == width || j == 1 || j == length) { 
+                    document.write(sao);
+                } else {
+                    document.write('&nbsp;&nbsp')
+                }
+
+            }
+            document.write('<br>');
+        }
+        document.write('</div>');
+    } else {
+        alert('Không thể tính');
+        location.reload() }
+    </script>
+</body>
+</html>

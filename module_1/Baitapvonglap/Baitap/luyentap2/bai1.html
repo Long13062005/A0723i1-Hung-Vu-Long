@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var number = parseFloat(prompt("Số lượng số trong dãy Fibonacci bạn muốn in"))
+       function generateFibonacci(number) {
+  const fibonacciArray = [0, 1];
+
+  for (let i = 2; i < number; i++) {
+    const nextFibonacci = fibonacciArray[i - 1] + fibonacciArray[i - 2];
+    fibonacciArray.push(nextFibonacci);
+  }
+
+  return fibonacciArray;
+}
+
+const fibonacciSequence = generateFibonacci(number);
+
+document.write("Dãy Fibonacci gồm ", number, " số đầu tiên là:", fibonacciSequence.join(", "));
+
+    </script>
+</body>
+</html>
