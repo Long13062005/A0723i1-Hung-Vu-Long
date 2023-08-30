@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h1>
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+    <script>
+      function concatenateArrays(arrayA, arrayB) {
+        const concatenatedArray = [...arrayA, ...arrayB];
+        return concatenatedArray;
+      }
+        function tinh() {
+      var a = new Array(10);
+      var b = new Array(10);
+     
+      
+      for (var i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+      }
+      for (var j = 0; j < b.length; j++) {
+        b[j] = parseInt(prompt("Nhập số thứ " + (j + 1) + ":"));
+      }
+      const c = concatenateArrays(a,b);
+      document.getElementById("result").innerHTML = "Mảng sau khi nối: " + c.join(" ");
+    }
+    </script>
+    
+</body>
+</html>

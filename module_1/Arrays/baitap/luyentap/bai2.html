@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h1>
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+    <script>
+        
+        function tinh() {
+      var numbers = new Array(10);
+      let result = 0;
+      for (var i = 0; i < numbers.length; i++) {
+        numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+        if (numbers[i] > numbers[result]) {
+         result = i;
+  }
+      }
+      
+      document.getElementById("result").innerHTML = `Số phần tủ lớn nhất là ${numbers[result]} và vị trí của nó là ${result + 1}` ;
+    }
+    </script>
+</body>
+</html>

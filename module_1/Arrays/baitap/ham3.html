@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hung Vu Long bị đổi trạng thái char</h1>
+    <script>
+        var str = "Hung Vu Long";//12
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];
+  
+  for(let x=0; x<str.length; x++)
+  {
+    if (UPPER.indexOf(str[x]) != -1) {
+        result.push(str[x].toLowerCase());
+    } else if (LOWER.indexOf(str[x]) != -1) {
+        result.push(str[x].toUpperCase());
+    } else {
+        result.push(str[x]);
+    }
+   }
+   for (let i = 0; i < 100 ; i++) {
+document.write(result.join('') + '<br>'); }
+    </script>
+</body>
+</html>

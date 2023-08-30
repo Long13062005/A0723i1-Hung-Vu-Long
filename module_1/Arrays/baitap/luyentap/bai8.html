@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</h1>
+    <button onclick="tinh()">Tính</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+      var numbers = new Array(10);
+      
+      for (var i = 0; i < numbers.length; i++) {
+        numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+
+      }
+      numbers.sort((a, b) => b - a);
+      
+      document.getElementById("result").innerHTML = "Mảng đã sắp xếp giảm dần: " + numbers.join(" ") ;
+    }
+    </script>
+</body>
+</html>

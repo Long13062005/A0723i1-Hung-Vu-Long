@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kiếm V</h1>
+    <button onclick="tinh()">Kiem tra</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+        const v = parseInt(prompt("Nhập số nguyên V:"));
+      var count = 0;
+      var numbers = new Array(10);
+      let result;
+      for (var i = 0; i < numbers.length; i++) {
+        numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+        if (numbers[i] == v) {
+            result = `V(${v}) is in array `;
+            break;
+        } else {
+            result = `V(${v}) is not in array `;
+        }
+      }
+      
+      document.getElementById("result").innerHTML = result;
+    }
+    </script>
+</body>
+</html>

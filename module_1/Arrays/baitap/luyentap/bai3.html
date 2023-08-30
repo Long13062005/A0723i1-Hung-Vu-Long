@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h1>
+  <button onclick="tinh()">Tính</button>
+  <p id="result"></p>
+  <script>
+      var trungbinh = 0;
+      function tinh() {
+        let n = parseInt(prompt('Mời bạn nhập vào số phần tử của mảng'));
+    var numbers = new Array(n);
+    let result = 0;
+    for (var i = 0; i < n; i++) {
+      numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+      trungbinh += numbers[i]/n; 
+      if (numbers[i] > numbers[result]) {
+       result = i;
+}
+    }
+    
+    document.getElementById("result").innerHTML = `Số phần tủ lớn nhất là ${numbers[result]} và giá trị trung bình là ${trungbinh}` ;
+  }
+  </script>
+</body>
+</html>

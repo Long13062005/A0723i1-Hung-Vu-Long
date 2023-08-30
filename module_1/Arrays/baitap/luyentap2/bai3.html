@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function number(a) {
+            var count = 0;
+            for (var i = 0; i < n ; i++) { 
+                if (!isNaN(parseInt(a[i]))) {
+                    count++;
+                 }
+            }
+            return count ;
+        }
+        const n = parseInt(prompt("Nhập kích thước của mảng ký tự:"));
+        const a = new Array(n);  
+        for (var i = 0; i < n ; i++) {
+        a[i] = parseInt(prompt("Nhập ký tự thứ " + (i + 1) + ":"));
+        }
+        const so = number(a); 
+
+        document.write("Số ký tự số trong mảng là " + so );
+    </script>
+</body>
+</html>

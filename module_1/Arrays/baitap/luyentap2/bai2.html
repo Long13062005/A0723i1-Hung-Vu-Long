@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = parseInt(prompt("Nhập bao nhiêu ký tự cần được đảo ngược :"))
+        var a = new Array(n);
+        for (var i = 0; i < n ; i++) {
+        a[i] = parseInt(prompt("Nhập ký tự thứ " + (i + 1) + ":"));
+        }
+        document.write("Ta có mảng là " + a +'</br>');
+        document.write("Nên ta có " +a.reverse().join(','));
+    </script>
+    
+</body>
+</html>

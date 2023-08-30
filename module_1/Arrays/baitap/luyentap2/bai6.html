@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Chỉ thay thế ký tự - thành _ chứ không thay cả chuỗi :(
+        function thaythe(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === "-") {
+            arr[i] = "_";
+            }
+        }
+        }
+
+        const n = parseInt(prompt("Nhập kích thước của mảng ký tự:"));
+        const a = new Array(n);
+
+        for (let i = 0; i < n; i++) {
+        a[i] = prompt("Nhập ký tự thứ " + (i + 1) + ":");
+        }
+
+        thaythe(a);
+        document.write("Mảng sau khi thay thế - thành _ là ", a);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng</h1>
+    <button onclick="tinh()">Kiem tra</button>
+    <p id="result"></p>
+    <script>
+        function tinh() {
+            const v = parseInt(prompt("Nhập số nguyên V:"));
+        const numbers = new Array(10);
+        
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+        }
+
+        let result = `V(${v}) is not in the array`;
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] === v) {
+            numbers.pop(v)
+            numbers.push(0);
+            result = `V(${v}) was found in the array and removed. Updated array: ${numbers.join(", ")}`;
+            break;
+            }
+        }
+
+        console.log(result);
+        document.getElementById("result").innerHTML = result;
+    }
+    </script>
+</body>
+</html>

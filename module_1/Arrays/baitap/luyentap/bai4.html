@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> khởi tạo/nhập vào một mảng 5 số nguyên và đảo ngược các phần tử trong mảng đó.</h1>
+  <button onclick="tinh()">Test</button>
+    <p id="result"></p>
+    <script>
+      function tinh() {
+        let n = parseInt(prompt('Mời bạn nhập vào số phần tử của mảng'));
+    var numbers = new Array(n);
+    let result = 0;
+    for (var i = 0; i < n; i++) {
+      numbers[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
+      
+}
+    
+    document.getElementById("result").innerHTML = numbers.reverse().join(" ") ;
+  }
+    </script>
+</body>
+</html>

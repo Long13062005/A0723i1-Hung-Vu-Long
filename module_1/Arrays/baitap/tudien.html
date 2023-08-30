@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Từ điển Tiếng Anh (one - five)</h1>
+        <label>Nhập từ dịch</label>
+        <input type="text" id="nhap">
+        <button onclick="tinh()">Dịch</button>
+        <p id="result"></p>
+    <script>
+        function tinh() {
+        var viet = ["một","hai","ba","bốn","năm"];
+        var eng = ["one","two","three","four","five"];
+        var index = 0;
+        var tu = document.getElementById("nhap").value;
+        var result;
+        
+            for (var i = 0; i < eng.length; i++) {
+                if ( tu == eng[i] ) {
+                    index = i;
+                    for ( var j = 0; j < viet.length; j++ ) {
+                        if ( index == j ) {
+                            result = viet[j];
+                        }
+                    }
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
