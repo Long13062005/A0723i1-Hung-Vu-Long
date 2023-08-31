@@ -22,7 +22,7 @@
 
         for (let i = 0; i < numbers.length; i++) {
             if (numbers[i] === v) {
-            numbers.pop(v)
+            numbers.splice(i,1)
             numbers.push(0);
             result = `V(${v}) was found in the array and removed. Updated array: ${numbers.join(", ")}`;
             break;
