@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(so1,so2,so3) {
+            if (so1 > so2 && so2 > so3 && so1 > so3) {
+                alert(`${so1} là lớn nhất và ${so3} là nhỏ nhất`)
+            } else if (so1 > so2 && so2 < so3 && so1 > so3) {
+                alert(`${so1} là lớn nhất và ${so2} là nhỏ nhất`)
+            } else if (so2 > so1 && so1 < so3 && so2 > so3) {
+                alert(`${so2} là lớn nhất và ${so1} là nhỏ nhất`)
+            } else if (so2 > so1 && so1 > so3 && so2 > so3) {
+                alert(`${so2} là lớn nhất và ${so3} là nhỏ nhất`)
+            } else if (so3 > so1 && so1 > so2 && so3 > so1) {
+                alert(`${so3} là lớn nhất và ${so2} là nhỏ nhất`)
+            } else if (so3 > so1 && so1 < so2 && so3 > so1) {
+                alert(`${so3} là lớn nhất và ${so1} là nhỏ nhất`)
+            } 
+        }
+        const n1 = parseInt(prompt("Nhập số đầu tiên"));
+        const n2 = parseInt(prompt("Nhập số Thứ hai"));
+        const n3 = parseInt(prompt("Nhập số Thứ ba"));
+        test(n1, n2, n3);
+        </script>
+</body>
+</html>

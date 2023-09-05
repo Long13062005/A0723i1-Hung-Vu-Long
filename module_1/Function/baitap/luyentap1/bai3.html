@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const thamso1 = parseInt(prompt("Nhập tham số thứ nhất : "));
+        const thamso2 = parseInt(prompt("Nhập tham số thứ hai : "));
+        function test(so1,so2) {
+            if (so1 > so2) {
+                alert(`${so1} lớn hơn ${so2}`);
+                return;
+            } else {
+                let sum = "Tổng hai tham số là " + (so1 + so2);
+                alert(sum);
+                return ;
+            }
+        }
+        test(thamso1, thamso2);
+    </script>
+</body>
+</html>

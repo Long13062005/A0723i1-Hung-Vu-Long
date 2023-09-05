@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function doiChoHaiSo(a, b) {
+            let temp = a;
+            a = b;
+            b = temp;
+            return [a, b];
+            }
+        const so1 = parseInt(prompt("Nhập số đầu tiên"));
+        const so2 = parseInt(prompt("Nhập số Thứ hai"));
+        alert(`Trước khi đổi chỗ: so1 = ${so1}, so2 = ${so2}`);
+        alert(`Sau khi đổi chỗ: so1 = ${so2}, so2 = ${so1}`);
+    </script>
+</body>
+</html>
