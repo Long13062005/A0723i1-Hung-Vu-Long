@@ -8,12 +8,15 @@
 <body>
     <script>
         const n = parseInt(prompt("Nhập số ký tự bạn muốn nhập :"))
+        function reverse(n) { 
         var a = new Array(n);
         for (var i = 0; i < n; i++) {
             a[i] = parseInt(prompt("Nhập số thứ " + (i + 1) + ":"));
 
         }
-        alert(a.reverse().join(","));
+        return a.reverse().join(",");
+    }
+    alert(reverse(n));
     </script>
 </body>
 </html>
