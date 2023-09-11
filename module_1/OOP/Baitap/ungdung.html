@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Adam và Eva ăn táo</title>
+    </head>
+    <body>
+    
+    <button onclick="startStory()">Bắt đầu câu chuyện</button>
+    
+    <p id="story"></p>
+    
+    <script>
+    // Biến để theo dõi số quả táo còn lại trong vườn địa đàng
+    let remainingApples = 10;
+    
+    // Hàm kiểm tra xem câu chuyện đã kết thúc chưa
+    function isStoryFinished() {
+      return remainingApples === 0;
+    }
+    
+    // Hàm để Adam ăn táo
+    function adamEatsApple() {
+      if (!isStoryFinished()) {
+        remainingApples--;
+        return "Adam đã ăn một miếng táo. Còn " + remainingApples + " quả táo.";
+      } else {
+        return "Câu chuyện đã kết thúc!";
+      }
+    }
+    
+    // Hàm để Eva ăn táo
+    function evaEatsApple() {
+      if (!isStoryFinished()) {
+        remainingApples--;
+        return "Eva đã ăn một miếng táo. Còn " + remainingApples + " quả táo.";
+      } else {
+        return "Câu chuyện đã kết thúc!";
+      }
+    }
+    
+    // Hàm bắt đầu câu chuyện
+    function startStory() {
+      const storyElement = document.getElementById('story');
+      storyElement.innerHTML = "Adam và Eva ở trong vườn địa đàng với " + remainingApples + " quả táo.";
+    
+      // Lặp cho đến khi câu chuyện kết thúc
+      while (!isStoryFinished()) {
+        storyElement.innerHTML += "<br>" + adamEatsApple();
+        storyElement.innerHTML += "<br>" + evaEatsApple();
+      }
+    }
+    </script>
+    
+    </body>
+    </html>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam và Eva ăn táo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #story-container {
+            text-align: center;
+        }
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="story-container">
+        <h1>Adam và Eva ăn táo</h1>
+        <div id="image-container">
+            <img id="adam-image" src="https://th.bing.com/th/id/R.19b1ca9828ed1949cb7f5bfa7b452d9b?rik=UPK%2fv%2bxKcPP4zQ&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Adam">
+            <img id="eva-image" src="https://images.saymedia-content.com/.image/t_share/MTc2MjQ3NzI2NTkyMzA0NTUz/adam-and-eve--the-tree-of-knowledge-of-good-and-evil.jpg" alt="Eva">
+        </div>
+        <p id="story"></p>
+        <button onclick="startStory()">Bắt đầu câu chuyện</button>
+    </div>
+    <script>
+        const adamImage = document.getElementById('adam-image');
+const evaImage = document.getElementById('eva-image');
+const storyElement = document.getElementById('story');
+
+let remainingApples = 10;
+let isStoryFinished = false;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function adamEatsApple() {
+    if (!isStoryFinished && remainingApples > 0) {
+        storyElement.innerHTML += "<br>Adam đã ăn một miếng táo. Còn " + --remainingApples + " quả táo.";
+        adamImage.style.transform = "rotate(45deg)";
+        await sleep(500);
+        adamImage.style.transform = "rotate(0deg)";
+    } else {
+        isStoryFinished = true;
+        storyElement.innerHTML += "<br>Adam đã ăn hết táo.";
+    }
+}
+
+async function evaEatsApple() {
+    if (!isStoryFinished && remainingApples > 0) {
+        storyElement.innerHTML += "<br>Eva đã ăn một miếng táo. Còn " + --remainingApples + " quả táo.";
+        evaImage.style.transform = "rotate(-45deg)";
+        await sleep(500);
+        evaImage.style.transform = "rotate(0deg)";
+    } else {
+        isStoryFinished = true;
+        storyElement.innerHTML += "<br>Eva đã ăn hết táo.";
+    }
+}
+
+function startStory() {
+    if (!isStoryFinished) {
+        storyElement.innerHTML = "Adam và Eva ở trong vườn địa đàng với " + remainingApples + " quả táo.";
+        adamImage.style.transform = "rotate(0deg)";
+        evaImage.style.transform = "rotate(0deg)";
+    } else {
+        storyElement.innerHTML = "Câu chuyện đã kết thúc!";
+    }
+    adamImage.style.transition = "transform 0.5s";
+    evaImage.style.transition = "transform 0.5s";
+
+    adamEatsApple();
+    evaEatsApple();
+}
+
+
+    </script>
+</body>
+</html>

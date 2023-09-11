@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class nhietdo {
+            constructor(C) {
+                this.C = C;
+            }
+            sangF() {
+                return (this.C * 9/5) + 32;
+            }
+            sangK() {
+                return this.C + 273.15;
+            }
+        }
+        const nhietC = parseFloat(prompt("Nhập nhiệt độ C bạn muốn :"));
+        const nhietdo1 = new nhietdo(nhietC);
+        const sangF = nhietdo1.sangF();
+        const sangK = nhietdo1.sangK();
+        if (nhietC >= -273) {
+            alert(`Chuyển đổi qua F là ${sangF}`);
+            alert(`Chuyển đổi qua K là ${sangK}`);
+            let a = confirm("Thử lại");
+            if (a) {
+                window.location.reload();
+            } else {
+                alert("Thì thui :(")
+            }
+        } else {
+            alert("Thử lại");
+            window.location.reload();
+        }
+
+    </script>
+</body>
+</html>

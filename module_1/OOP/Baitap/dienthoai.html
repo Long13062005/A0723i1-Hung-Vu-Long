@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class mobile {
+            constructor() {
+                this.battery = 100;
+                this.isPhoneOn = false;
+                this.tinnhap = [];
+                this.tinnhan = [];
+                this.tingui = [];
+            }
+            turnOn() {
+                if (!this.isPhoneOn) {
+                    this.isPhoneOn = true;
+                    alert("Điện thoại đã bật.");
+                }
+            }
+            turnOff() {
+                if (this.isPhoneOn) {
+                    this.isPhoneOn = false;
+                    alert("Điện thoại đã tắt");
+                }
+            }
+            checkBattery() {
+                alert("Pin còn lại : " + this.battery + "%");
+            }
+            sacpin() {
+                if (this.isPhoneOn) {
+                    this.battery= 100;
+                    alert("Pin đã được sạc đầy");
+                }
+            }
+            soantin(tin) {
+                if (this.isPhoneOn) {
+                    this.tinnhap.push(tin);
+                    alert("Tin đã được soạn");
+                    this.battery--;
+                }
+            }
+            guitin(nhan,tin) {
+                if (this.isPhoneOn) {
+                    if (this.battery > 0) {
+                        this.tingui.push({ to: nhan,tin});
+                        nhan.nhantin(this, tin);
+                        alert("Tin nhắn đã được gửi");
+                        this.battery--;
+                    } else {
+                        alert("Pin yếu, không thể gửi tin nhắn");
+                    }
+                }
+            }
+            nhantin(gui, tin) {
+                if (this.isPhoneOne) {
+                    this.tinnhan.push({from: gui, tin});
+                    alert("Bạn đã nhận được một tin nhắn");
+                    this.battery--;
+                }
+            }
+            checkInbox() {
+                alert("Hộp thư đến");
+                for (const tin of this.tinnhan) {
+                    alert(`${tin.from}: ${tin.tin}`);
+                }
+                this.battery--;
+            }
+            checksentmessages() {
+                if (this.isPhoneOn) {
+                    alert("Tin đã gửi :");
+                for (const tin of this.tingui) {
+                    alert(`To ${tin.to} : ${tin.tin}`);
+                }
+                this.battery--;
+                }
+            }
+        }
+        const myPhone = new mobile();
+        myPhone.turnOn();
+        myPhone.turnOff();
+        myPhone.checkBattery();
+        myPhone.sacpin();
+        myPhone.soantin(prompt("Viết một bài gì đó cho người kia :" ));
+        myPhone.guitin("Cảm ơn ông nha");
+        myPhone.nhantin();
+        myPhone.checkInbox();
+        myPhone.checksentmessages();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Hinhchunhat {
+            constructor(chieudai,chieurong) {
+                this.chieurong = chieurong;
+                this.chieudai = chieudai;
+            }
+             dientich() {
+                return this.chieurong * this.chieudai; 
+            }
+                chuvi() {
+                    return (this.chieurong + this.chieudai) * 2;
+                }
+        }
+        let a = parseInt(prompt("Nhập chiều dài vào đây : "));
+        let b = parseInt(prompt("Nhập chiều rộng vào đây : "));
+        if (a <= b) {
+            alert("Không thể xảy ra");
+            window.location.reload();
+        } else {
+            const Hinhchunhat1 = new Hinhchunhat(a,b);
+            const dientich = Hinhchunhat1.dientich();
+            const chuvi= Hinhchunhat1.chuvi();
+            alert(`Diện tích: ${dientich}`);
+            alert(`Chu vi: ${chuvi}`);
+            let c = confirm("Thử lại");
+            if (c) {
+                window.location.reload();
+            } else {
+                alert("Thì thui :(")
+            }
+        }
+    </script>
+</body>
+</html>
