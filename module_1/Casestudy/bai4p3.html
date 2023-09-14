@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tinh(menu,soluong) {
+            return menu * soluong;
+        }
+        var n = confirm(`
+        Menu :
+        1.Cafe
+        2.Cam vắt
+        3.Nước ép cà rốt
+        4.Nước ép cà chua
+        5.Nước lọc
+        6.Nước dừa
+        Chọn thức uống hok ?`);
+        if (n) {
+            do {
+
+           
+            let menu = prompt(`Menu :
+            1.Cafe
+            2.Cam vắt
+            3.Nước ép cà rốt
+            4.Nước ép cà chua
+            5.Nước lọc
+            6.Nước dừa
+            Mời bạn chọn thức uống theo số thứ tự,nếu không thì bấm số 7 để thoát quán.`);
+        }
+            switch(n) { 
+                case 1 :
+                let giacafe = 15;
+                let cafe = parseInt(prompt(`Bạn đã chọn cafe có giá 15k 
+                        Mời bạn chọn số lượng : `));
+                alert("Tổng của bạn hết " + tinh(giacafe,cafe) + "k");
+                break;
+                case 2 :
+                let giacam = 15;
+                let cam = parseInt(prompt(`Bạn đã chọn cam vắt có giá 15k 
+                Mời bạn chọn số lượng : `));
+                alert("Tổng của bạn hết " + tinh(giacam,cam) + "k");
+                break;
+    }
+        } else {
+            alert("Bạn đã đi ra khỏi quán và quyết định quay lại như 1 vòng lặp vô tận");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const h = parseInt(prompt("Nhập giá trị chiều cao của tam giác vuông : "));
+        function tamgiacvuong(height) {
+            for (let i = 1; i <= height; i++) {
+                let row = '';
+            
+                for (let j = 1; j <= i; j++) {
+                    if (j === 1 || j === i || i === height) {
+                        row += '*';
+                    } else {
+                        row += ' ';
+                    }
+                }
+                console.log(row);
+            }
+        }
+        tamgiacvuong(h);
+       
+
+    </script>
+</body>
+</html>

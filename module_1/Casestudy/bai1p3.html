@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = parseInt(prompt("Nhập số phần tử trong mảng : "));
+        function tinh(n){
+            let arr = new Array(n);
+            let out = new Array(n);
+            for (let i = 0; i < n; i++) {
+                arr[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+            } 
+            for (let i = 0; i <  n; i++){
+                out[i] = 0;
+                for (let j = 0; j <= i; j++) {
+                    out[i] += arr[j]
+                }
+            }
+            return out;
+        }
+        tinh(n);
+        alert(tinh(n));
+
+    </script>
+</body>
+</html>

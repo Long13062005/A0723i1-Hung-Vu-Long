@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = parseInt(prompt("Nhập số phần tử trong mảng : "));
+        const m = parseInt(prompt("Nhập số phần tử trong mảng : "));
+            let arr = new Array(n);
+            let out = new Array(m);
+            for (let i = 0; i < n; i++) {
+                arr[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+            }
+            for (let i = 0; i < m; i++) {
+                out[i] =parseFloat(prompt("Nhập vào phần tử: "+(i+1)))
+            }
+            function Hieu(A, B) {
+                let C = [];
+                for (let i = 0; i < B.length; i++) {
+                  if (A.indexOf(B[i]) == -1) {
+                    C.push(B[i]);
+                  }
+                }
+                C.sort((a, b) => a - b);
+                return C;
+              }           
+              Hieu(arr,out);
+              alert(Hieu(arr,out));
+    </script>
+</body>
+</html>
