@@ -7,9 +7,7 @@
 </head>
 <body>
     <script>
-        function tinh(menu,soluong) {
-            return menu * soluong;
-        }
+        
         var n = confirm(`
         Menu :
         1.Cafe
@@ -19,33 +17,72 @@
         5.Nước lọc
         6.Nước dừa
         Chọn thức uống hok ?`);
+        let totalBill = 0;
         if (n) {
+            let menu;
             do {
 
            
-            let menu = prompt(`Menu :
-            1.Cafe
-            2.Cam vắt
-            3.Nước ép cà rốt
-            4.Nước ép cà chua
-            5.Nước lọc
-            6.Nước dừa
-            Mời bạn chọn thức uống theo số thứ tự,nếu không thì bấm số 7 để thoát quán.`);
-        }
-            switch(n) { 
-                case 1 :
-                let giacafe = 15;
-                let cafe = parseInt(prompt(`Bạn đã chọn cafe có giá 15k 
-                        Mời bạn chọn số lượng : `));
-                alert("Tổng của bạn hết " + tinh(giacafe,cafe) + "k");
-                break;
-                case 2 :
-                let giacam = 15;
-                let cam = parseInt(prompt(`Bạn đã chọn cam vắt có giá 15k 
-                Mời bạn chọn số lượng : `));
-                alert("Tổng của bạn hết " + tinh(giacam,cam) + "k");
-                break;
-    }
+            menu = parseInt(prompt(`Menu :
+            1.Cafe 20k
+            2.Cam vắt 15k
+            3.Nước ép cà rốt 25k
+            4.Nước ép cà chua 12k
+            5.Nước lọc 5k
+            6.Nước dừa 30k
+            Mời bạn chọn thức uống theo số thứ tự,nếu xong thì bấm số 7 để tính tiền.`));
+            
+            switch (menu) {
+                case 1:
+                    let soluong1 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                    for (let i = 0; i < soluong1; i++) {
+                    totalBill += 20000;}
+                    alert(`Tổng tiền của bạn sau khi mua ${soluong1} ly là ${totalBill}VND.`)
+                  break;
+                case 2:
+                let soluong2 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                  for (let i = 0; i < soluong2; i++) {
+                    totalBill += 15000;}
+                    alert(`Tổng tiền của bạn sau khi mua ${soluong2} ly là ${totalBill}VND.`)
+                  break;
+                case 3:
+                let soluong3 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                for (let i = 0; i < soluong3; i++) {
+                totalBill += 25000;}
+                alert(`Tổng tiền của bạn sau khi mua ${soluong3} ly là ${totalBill}VND.`)
+                  break;
+                case 4:
+                let soluong4 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                for (let i = 0; i < soluong4; i++) {
+                totalBill += 12000; }
+                alert(`Tổng tiền của bạn sau khi mua ${soluong4} ly là ${totalBill}VND.`)
+                  break;
+                case 5:
+                let soluong5 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                for (let i = 0; i < soluong5; i++) {
+                totalBill += 5000; }
+                alert(`Tổng tiền của bạn sau khi mua ${soluong5} ly là ${totalBill}VND.`)
+                  break;
+                case 6:
+                let soluong6 = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn :"));
+                for (let i = 0; i < soluong6; i++) {
+                totalBill += 30000; }
+                alert(`Tổng tiền của bạn sau khi mua ${soluong6} ly là ${totalBill}VND.`)
+                  break;
+                case 7:
+                  break;
+                default :
+                alert("Mời bạn chọn những món trên từ 1-7 chứ quán ở thành phố không có nhiều như ở city")
+            } 
+        } while (menu !== 7);
+           alert("Tổng số tiền cần phải trả: " + totalBill + " VND");
+           let a = confirm("Bạn có muốn quay lại không?");
+           if (a) {
+            location.reload();
+           } else {
+            alert("Bạn đã đi ra khỏi quán và quyết định quay lại như 1 vòng lặp vô tận");
+            location.reload();
+           }
         } else {
             alert("Bạn đã đi ra khỏi quán và quyết định quay lại như 1 vòng lặp vô tận");
             location.reload();
