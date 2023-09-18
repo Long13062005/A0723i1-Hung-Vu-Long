@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Danh sách học viên</h1>
+    
+    <button onclick="them()">Thêm học viên</button>
+    <button onclick="sua()">Sửa thông tin học viên</button>
+    <button onclick="xoa()">Xóa học viên</button>"
+    <table id="danhSachHocVien" border="1" style="border-collapse:collapse ;" >
+        <thead>
+            <tr>
+                <th>Mã học viên</th>
+                <th>Tên học viên</th>
+                <th>Lớp học viên</th>
+                <th>Email học viên</th>
+                <th>Ngày sinh học viên</th>
+                <th>Module học viên</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        let danhSachHocVien = [];
+        function them() {
+            let maHocVien = prompt("Nhập mã học viên :")
+            let tenHocVien = prompt("Nhập tên học viên:");
+            let lopHocVien = prompt("Nhập lớp học viên:");
+            let emailHocVien = prompt("Nhập email học viên:");
+            let ngaysinhocVien = prompt("Nhập ngày sinh học viên (dd/mm/yyyy):");
+            let moduleHocVien = parseInt(prompt("Nhập module hiện tại học viên :"));
+
+            let hocVien = {
+                id : maHocVien,
+                ten: tenHocVien,
+                lop: lopHocVien,
+                email : emailHocVien,
+                date : ngaysinhocVien,
+                module : moduleHocVien
+            };
+
+            danhSachHocVien.push(hocVien);
+
+            hienThiDanhSachHocVien();
+        }
+
+        function hienThiDanhSachHocVien() {
+            let table = document.getElementById("danhSachHocVien");
+            let tbody = table.getElementsByTagName("tbody")[0];
+            tbody.innerHTML = ""; 
+
+            for (let hocVien of danhSachHocVien) {
+                let row = tbody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                let cell4 = row.insertCell(3);
+                let cell5 = row.insertCell(4);
+                let cell6 = row.insertCell(5);
+
+                cell1.textContent = hocVien.id;
+                cell2.textContent = hocVien.ten;
+                cell3.textContent = hocVien.lop;
+                cell4.textContent = hocVien.email;
+                cell5.textContent = hocVien.date;
+                cell6.textContent = hocVien.module;
+                let btnXoa = document.createElement("button");
+                btnXoa.textContent = "Xóa";
+                btnXoa.onclick = function() {
+                    xoaHocVien(hocVien.id);
+                };
+                cell7.appendChild(btnXoa);
+            }
+        }
+        function sua() {
+            let maCanSua = prompt("Nhập mã học viên cần sửa:");
+
+            let hocVienCanSua = danhSachHocVien.find(hocVien => hocVien.id === maCanSua);
+            if (hocVienCanSua) {
+                let maMoi = prompt("Nhập mã học viên mới:")
+                let tenMoi = prompt("Nhập tên học viên mới:");
+                let lopMoi = prompt("Nhập lớp học viên mới:");
+                let emailMoi = prompt("Nhập email học viên mới:");
+                let ngaysinhMoi = prompt("Nhập ngày sinh học viên mới (dd/mm/yyyy):");
+                let moduleMoi = parseInt(prompt("Nhập module hiện tại học viên mới:"));
+
+                hocVienCanSua.id = maMoi;
+                hocVienCanSua.ten = tenMoi;
+                hocVienCanSua.lop = lopMoi;
+                hocVienCanSua.email = emailMoi;
+                hocVienCanSua.date = ngaysinhMoi;
+                hocVienCanSua.module = moduleMoi;
+                
+                hienThiDanhSachHocVien();
+            } else {
+                alert("Mã học viên không tồn tại.");
+            }
+        }
+         function xoa() {
+            let maXoa = prompt("Nhập mã học viên cần xóa:");
+            let indexXoa = danhSachHocVien.findIndex(hocVien => hocVien.id === maXoa);
+            if (indexXoa !== -1) {
+                danhSachHocVien.splice(indexXoa, 1);
+                hienThiDanhSachHocVien(); 
+            } else {
+                alert("Mã học viên không tồn tại.");
+            }
+        }
+    </script>
+</body>
+</html>

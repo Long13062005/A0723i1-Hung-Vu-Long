@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tu1 = prompt("Chuỗi đầu tiên :")
+        let tu2 = prompt("Chuỗi thứ hai :")
+        function commonCharacterCount(s1, s2) {
+            let charCount = {};
+            let count = 0;
+            for (let i of s1) {
+                charCount[i] = (charCount[i] || 0) + 1;
+            }
+            for (let i of s2) {
+                if (charCount[i] && charCount[i] > 0) {
+                    count++;
+                    charCount[i]--;
+                }
+            }
+            return count;
+        }
+        let test = commonCharacterCount(tu1,tu2);
+        alert(test);
+    </script>
+    
+</body>
+</html>

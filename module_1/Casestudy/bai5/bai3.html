@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r = parseInt(prompt("Nhập số hàng :"));
+        let c = parseInt(prompt("Nhập số cột :"));
+        function max(matrix) {
+            if (matrix.length === 0 || matrix[0].length === 0) {
+                return null;
+            }
+            let max = matrix[0][0];
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] > max) {
+                        max = matrix[i][j];
+                    }
+                }
+            }
+            return max;
+        }
+        
+        function min(matrix) {
+            if (matrix.length === 0 || matrix[0].length === 0) {
+                return null;
+            }
+            let min = matrix[0][0];
+        
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] < min) {
+                        min = matrix[i][j];
+                    }
+                }
+            }
+            return min;
+        }
+        function tinh(m, n) {
+            let matrix = [];
+            let count = 0;
+        
+            for (let i = 0; i < m; i++) {
+                matrix[i] = [];
+                for (let j = 0; j < n; j++) {
+                    let value = parseInt(prompt(`Nhập giá trị cho hàng ${i + 1}, cột ${j + 1}:`));
+                    matrix[i][j] = value;
+                }
+            }
+        
+            let maxValue = max(matrix);
+            let minValue = min(matrix);
+        
+            console.log("Ma trận:");
+            for (let i = 0; i < m; i++) {
+                console.log(matrix[i].join("\t"));
+            }
+        
+            return [maxValue, minValue];
+        }
+        
+        let [maxValue, minValue] = tinh(r, c);
+        alert(`Giá trị lớn nhất trong mảng 2 chiều là: ${maxValue}, giá trị nhỏ nhất là: ${minValue}`);
+    </script>
+</body>
+</html>

@@ -8,23 +8,22 @@
 <body>
     <script>
         const tien = parseInt(prompt("Nhập số tiền (đồng) bạn muốn vào đây : "));
-        var luongrong = 0;
-        var thuethunhap =0;
+        var luongRong = 0;
+        var thueThuNhap =0;
         function thue(tien) {
             if (tien >= 15000000 ) {
-                luongrong = tien * 0.8;
-                thuethunhap = tien * 0.2;
+                luongRong = tien * 0.8;
+                thueThuNhap = tien * 0.2;
             } else if (tien <= 7000000) {
-                luongrong = tien * 0.95;
-                thuethunhap = tien * 0.05;
+                luongRong = tien * 0.95;
+                thueThuNhap = tien * 0.05;
             } else {
-                luongrong = tien * 0.9;
-                thuethunhap = tien * 0.1;
+                luongRong = tien * 0.9;
+                thueThuNhap = tien * 0.1;
             }
-            return luongrong,thuethunhap;
         }
         thue(tien);
-        document.write(`Thuế thu thập của nhân viên này là ${thuethunhap} VNĐ, lương ròng là ${luongrong} VNĐ.`);
+        document.write(`Thuế thu thập của nhân viên này là ${thueThuNhap} VNĐ, lương ròng là ${luongRong} VNĐ.`);
 
     </script>
 </body>

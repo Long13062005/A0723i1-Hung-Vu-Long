@@ -8,22 +8,19 @@
 <body>
     <script>
         const h = parseInt(prompt("Nhập chiều cao của tam giác cân : "));
-        function tamgiaccan(height) {
-            for (let i = 1; i <= height; i++) {
-                let row = '';
-                
-                for (let j = 1; j <= height - i; j++) {
-                    row += ' ';
+        function tamGiacCan(height) {
+            if ( height > 0){
+                document.write("<center>")
+                for ( let i = 1; i <= height; i++){
+                    for (let j = 1; j <= 2*i-1; j++){
+                             document.write("*");
+                    }
+                    document.write("<br>")
                 }
-            
-                for (let k = 1; k <= 2 * i - 1; k++) {
-                    row += '*';
-                }
-            
-                console.log(row);
+                document.write("</center>")
             }
         }
-        tamgiaccan(h);
+        tamGiacCan(h);
     </script>
 </body>
 </html>

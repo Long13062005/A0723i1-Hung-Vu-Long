@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r = parseInt(prompt("Nhập số hàng :"));
+        let c = parseInt(prompt("Nhập số cột :"));
+        function tinh(m, n) {
+            let matrix = [];
+            let total = 0;
+    
+            for (let i = 0; i < m; i++) {
+                matrix[i] = [];
+                for (let j = 0; j < n; j++) {
+                    let value = parseInt(prompt(`Nhập giá trị cho hàng ${i + 1}, cột ${j + 1}:`));
+                    matrix[i][j] = value;
+                    if (value % 2 === 0) {
+                        total += value;  
+                    }
+                }
+            }
+            console.log("Ma trận:");
+            for (let i = 0; i < m; i++) {
+                console.log(matrix[i].join("\t"));
+            }
+            return total;
+        }
+        let tongSoChan = tinh(r, c);
+    alert(`Tổng các số chẵn trong ma trận là: ${tongSoChan}`);
+    </script>
+</body>
+</html>
