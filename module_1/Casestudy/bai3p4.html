@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findSameChar(str1, str2) {
+            const arr1 = str1.split('');
+            const arr2 = str2.split('');
+        
+            const charSet = new Set(arr2);
+        
+            let count = 0;
+        
+            for (const char of arr1) {
+                if (charSet.has(char)) {
+                    count++;
+                    charSet.delete(char);
+                }
+            }
+        
+            return count;
+        }
+        
+        const string1 = prompt("Nhập xâu kí tự thứ nhất:");
+        const string2 = prompt("Nhập xâu kí tự thứ hai:");
+        
+        const commonCount = findSameChar(string1, string2);
+        alert(`Số lượng ký tự chung là: ${commonCount}`);
+        
+    </script>
+</body>
+</html>
