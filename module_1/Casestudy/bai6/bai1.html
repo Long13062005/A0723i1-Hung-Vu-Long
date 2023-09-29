@@ -32,7 +32,7 @@
             let tenHocVien = prompt("Nhập tên học viên:");
             let lopHocVien = prompt("Nhập lớp học viên:");
             let emailHocVien = prompt("Nhập email học viên:");
-            let ngaysinhocVien = prompt("Nhập ngày sinh học viên (dd/mm/yyyy):");
+            let ngaySinhHocVien = prompt("Nhập ngày sinh học viên (dd/mm/yyyy):");
             let moduleHocVien = parseInt(prompt("Nhập module hiện tại học viên :"));
 
             let hocVien = {
@@ -40,7 +40,7 @@
                 ten: tenHocVien,
                 lop: lopHocVien,
                 email : emailHocVien,
-                date : ngaysinhocVien,
+                date : ngaySinhHocVien,
                 module : moduleHocVien
             };
 
@@ -82,19 +82,45 @@
 
             let hocVienCanSua = danhSachHocVien.find(hocVien => hocVien.id === maCanSua);
             if (hocVienCanSua) {
-                let maMoi = prompt("Nhập mã học viên mới:")
-                let tenMoi = prompt("Nhập tên học viên mới:");
-                let lopMoi = prompt("Nhập lớp học viên mới:");
-                let emailMoi = prompt("Nhập email học viên mới:");
-                let ngaysinhMoi = prompt("Nhập ngày sinh học viên mới (dd/mm/yyyy):");
-                let moduleMoi = parseInt(prompt("Nhập module hiện tại học viên mới:"));
-
-                hocVienCanSua.id = maMoi;
-                hocVienCanSua.ten = tenMoi;
-                hocVienCanSua.lop = lopMoi;
-                hocVienCanSua.email = emailMoi;
-                hocVienCanSua.date = ngaysinhMoi;
-                hocVienCanSua.module = moduleMoi;
+                
+                    
+                let chon = parseInt(prompt(`Nhập số bạn muốn sửa :
+                                            1.Mã học viên mới
+                                            2.Tên học viên mới
+                                            3.Lớp học viên mới
+                                            4.Email học viên mới
+                                            5.Ngày sinh học viên mới
+                                            6.Module học viên mới
+                                            7.Hoàn thành.`));
+                switch (chon) {
+                    case 1 : 
+                    let maMoi = prompt("Nhập mã học viên mới:")
+                    hocVienCanSua.id = maMoi;
+                    break;
+                    case 2 :
+                    let tenMoi = prompt("Nhập tên học viên mới:");
+                    hocVienCanSua.ten = tenMoi;
+                    break;
+                    case 3 :
+                    let lopMoi = prompt("Nhập lớp học viên mới:");
+                    hocVienCanSua.lop = lopMoi;
+                    break;
+                    case 4 :
+                    let emailMoi = prompt("Nhập email học viên mới:");
+                    hocVienCanSua.email = emailMoi;
+                    break;
+                    case 5 : 
+                    let ngaySinhMoi = prompt("Nhập ngày sinh học viên mới (dd/mm/yyyy):");
+                    hocVienCanSua.date = ngaySinhMoi;
+                    break;
+                    case 6 :
+                    let moduleMoi = parseInt(prompt("Nhập module hiện tại học viên mới:"));
+                    hocVienCanSua.module = moduleMoi;
+                    break;
+                    default:
+                    break;
+                }
+            
                 
                 hienThiDanhSachHocVien();
             } else {
