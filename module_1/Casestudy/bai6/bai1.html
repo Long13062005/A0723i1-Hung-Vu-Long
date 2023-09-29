@@ -47,6 +47,7 @@
             danhSachHocVien.push(hocVien);
 
             hienThiDanhSachHocVien();
+            
         }
 
         function hienThiDanhSachHocVien() {
@@ -69,12 +70,7 @@
                 cell4.textContent = hocVien.email;
                 cell5.textContent = hocVien.date;
                 cell6.textContent = hocVien.module;
-                let btnXoa = document.createElement("button");
-                btnXoa.textContent = "Xóa";
-                btnXoa.onclick = function() {
-                    xoaHocVien(hocVien.id);
-                };
-                cell7.appendChild(btnXoa);
+                
             }
         }
         function sua() {

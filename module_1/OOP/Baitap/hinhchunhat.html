@@ -6,17 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    <canvas id="adu">adu</canvas>
     <script>
-        class Hinhchunhat {
-            constructor(chieudai,chieurong) {
-                this.chieurong = chieurong;
-                this.chieudai = chieudai;
+        class HinhChuNhat {
+            constructor(chieuDai,chieuRong) {
+                this.chieuRong = chieuRong;
+                this.chieuDai = chieuDai;
             }
-             dientich() {
-                return this.chieurong * this.chieudai; 
+             dienTich() {
+                return this.chieuRong * this.chieuDai; 
             }
-                chuvi() {
-                    return (this.chieurong + this.chieudai) * 2;
+                chuVi() {
+                    return (this.chieuRong + this.chieuDai) * 2;
+                }
+                draw() {
+                    var c = document.getElementById("adu");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.rect(20 ,20, chieuRong, chieuDai)
+                ctx.stroke();
                 }
         }
         let a = parseInt(prompt("Nhập chiều dài vào đây : "));
@@ -25,11 +33,11 @@
             alert("Không thể xảy ra");
             window.location.reload();
         } else {
-            const Hinhchunhat1 = new Hinhchunhat(a,b);
-            const dientich = Hinhchunhat1.dientich();
-            const chuvi= Hinhchunhat1.chuvi();
-            alert(`Diện tích: ${dientich}`);
-            alert(`Chu vi: ${chuvi}`);
+            const HinhChuNhat1 = new HinhChuNhat(a,b);
+            const dienTich = HinhChuNhat1.dienTich();
+            const chuVi= HinhChuNhat1.chuVi();
+            alert(`Diện tích: ${dienTich}`);
+            alert(`Chu vi: ${chuVi}`);
             let c = confirm("Thử lại");
             if (c) {
                 window.location.reload();
@@ -37,6 +45,8 @@
                 alert("Thì thui :(")
             }
         }
+        HinhChuNhat.draw();
+        
     </script>
 </body>
 </html>
