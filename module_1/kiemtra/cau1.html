@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(n) {
+            if (n == 1) {
+                return null;
+            } else {
+                for (let i = 2; i <= n/2;i++) {
+                    if (n % i == 0) {
+                        return null;
+                    }
+                }
+            }
+            return n;
+        }
+
+        let n = parseInt(prompt("Nhập số phần tử của mảng :"));
+        if (n <= 50 && n > 0) {
+            let a = new Array(n);
+            for (let i = 0; i < n; i++) {
+                a[i] = parseInt(prompt("Nhập giá trị cho mảng ở chỉ số thứ " + i));
+            }
+            let b = [];
+            for (let i = 0; i < n; i++) {
+               b.push(isPrime(a[i]));
+            }
+            document.write(`Mảng của a là ` + a);
+            document.write('<br>');
+            document.write(`Mảng của b là ` + b.join(' '));
+        } else {
+            alert("Không được lớn hơn 50 và bé hơn 0");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Enter string : ");
+        function checkString(str) {
+            str = str.split("");
+            let na = ["u","e","o","a","i"];
+            for (var i = 0; i < str.length; i++) {
+                for (var j = 0; j < na.length; j++) {
+                    if (str[i]== na[j]) {
+                        break;
+                    } else {
+                        str.splice(0,1);
+                    }
+                }
+            }
+            alert(str.join(', '));
+        }
+        checkString(str);
+    </script>
+</body>
+</html>

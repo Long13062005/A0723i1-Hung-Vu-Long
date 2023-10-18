@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt("Nhập phân số thứ nhất (vd : a/b,1/2),..")
+            a = a.split("/");
+            if (a[1] == 0 ) {
+                alert("Không hợp lệ.vui lòng nhập lại từ đầu")
+                window.location.reload();
+            } else {
+        let b = prompt("Nhập phân số thứ hai (vd : a/b,1/2),..")
+            b = b.split("/");
+            if (b[1] == 0 ) {
+                alert("Không hợp lệ.vui lòng nhập lại từ đầu")
+                window.location.reload();
+            } else { 
+        function check(t1,m1,t2,m2) {
+            if ((t1 * m2 )==(t2 * m1)) {
+                return true;
+            }
+            return false;
+        }
+        const done = check (a[0],a[1],b[0],b[1]);
+        if (done) {
+            document.write("2 phân số bằng nhau");
+        } else {
+            document.write("2 phân số không bằng nhau");
+        }
+        }
+    }
+    </script>
+</body>
+</html>

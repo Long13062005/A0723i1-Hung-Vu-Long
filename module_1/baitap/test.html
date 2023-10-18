@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Enter the number of rows:"));
+
+for (let i = 1; i <= n; i++) {
+    let row = "";
+
+    // Print spaces before stars
+    for (let j = 1; j <= n - i; j++) {
+        row += " ";
+    }
+
+    // Print stars for the first and last rows
+    if (i === 1 || i === n) {
+        for (let j = 1; j <= i; j++) {
+            row += "*";
+        }
+    } else {
+        // Print star for the middle rows
+        row += "*";
+
+        // Print spaces in the middle
+        for (let j = 1; j <= i - 2; j++) {
+            row += " ";
+        }
+
+        // Print star for the middle rows
+        row += "*";
+    }
+
+    console.log(row);
+}
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container p-5">
+      <button class="btn btn-outline-primary mb-2" onclick="addNewStudent()">
+        <i class="fas fa-circle-plus me-2"></i>Thêm mới
+      </button>
+      <div id="editForm" style="display: none">
+        <input
+          type="text"
+          id="id"
+          class="form-control d-inline-block w-50 mb-2"
+        />
+        <input
+          type="text"
+          id="code"
+          class="form-control d-inline-block w-50 mb-2"
+        />
+        <input
+          type="text"
+          id="name"
+          class="form-control d-inline-block w-50 mb-2"
+        />
+        <button
+          class="btn btn-outline-primary btn-sm mt-2 d-block"
+          onclick="handleUpdateStudent()"
+        >
+          <i class="fas fa-pen me-2"></i>Cập nhật
+        </button>
+      </div>
+      <div id="root"></div>
+    </div>
+    <script>
+      class Student {
+        constructor(id, code, name) {
+          this.id = id;
+          this.code = code;
+          this.name = name;
+        }
+
+        getId() {
+          return this.id;
+        }
+
+        setId(id) {
+          this.id = id;
+        }
+
+        getCode() {
+          return this.code;
+        }
+
+        setCode(code) {
+          this.code = code;
+        }
+
+        getName() {
+          return this.name;
+        }
+
+        setName(name) {
+          this.name = name;
+        }
+      }
+
+      const PATTERN_NAME = /^[a-zA-Z ]+$/;
+
+      let students = [];
+
+      let phuongTD = new Student(1, "HV-0001", "PhuongTD");
+      let chanhTV = new Student(2, "HV-0002", "ChanhTV");
+
+      students.push(phuongTD);
+      students.push(chanhTV);
+
+      //Hiển thị
+      function displayStudents() {
+        let tableData = `<table
+        class="table table-hover table-bordered border-primary caption-top table-lg"
+      >
+        <caption>
+          Danh sách Sinh Viên
+        </caption>
+        <thead class="bg-light">
+          <tr>
+            <th>ID</th>
+            <th>CODE</th>
+            <th>NAME</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>`;
+        for (let i = 0; i < students.length; i++) {
+          const std = students[i];
+          tableData += `<tr>
+            <td>${std.getId()}</td>
+            <td>${std.getCode()}</td>
+            <td>${std.getName()}</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm" onclick="handleShowEditStudent(${std.getId()})">
+                <i class="fas fa-pen me-2"></i>Chỉnh sửa
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-outline-danger btn-sm" onclick="handleDeleteStudent(${std.getId()})">
+                <i class="fas fa-trash me-2"></i>Xóa
+              </button>
+            </td>
+          </tr>`;
+        }
+
+        tableData += `</tbody>
+      </table>`;
+        document.getElementById("root").innerHTML = tableData;
+      }
+      //Xóa
+      function handleDeleteStudent(studentId) {
+        // const index = students.findIndex(
+        //   (student) => student.getId() === studentId
+        // );
+
+        //Callback function
+
+        let index = -1;
+        for (let i = 0; i < students.length; i++) {
+          const student = students[i];
+          if (student.getId() === studentId) {
+            index = i;
+            break;
+          }
+        }
+
+        if (index !== -1) {
+          const confirmDelete = confirm(
+            `Bạn có muốn xóa sinh viên ${students[index].getName()} không?`
+          );
+          if (confirmDelete) {
+            students.splice(index, 1);
+            displayStudents();
+          }
+        } else {
+          alert(`Không tìm thấy sinh viên có id = ${studentId}`);
+        }
+      }
+
+      function checkRequired(inputName) {
+        let input = prompt(`Nhập ${inputName}:`);
+        while (true) {
+          if (input !== "") {
+            return input;
+          } else {
+            alert("Đây là trường bắt buộc nhập!");
+            input = prompt(`Nhập ${inputName}:`);
+          }
+        }
+      }
+
+      function checkExistsId(inputName) {
+        let id = +checkRequired(inputName);
+        while (true) {
+          const index = students.findIndex((student) => student.getId() === id);
+          if (index !== -1) {
+            alert("Id đã tồn tại!");
+            id = +checkRequired(inputName);
+          } else {
+            return id;
+          }
+        }
+      }
+
+      //Thêm mới
+      function addNewStudent() {
+        let id = checkExistsId("id");
+        let code = checkRequired("code");
+        let name = checkRequired("name");
+        let student = new Student(id, code, name);
+        // student.setId(id);
+        // student.setCode(code);
+        // student.setName(name);
+        students.push(student);
+        displayStudents();
+      }
+
+      //Chỉnh sửa
+      function handleShowEditStudent(studentId) {
+        const index = students.findIndex(
+          (student) => student.getId() === studentId
+        );
+        let std = students[index];
+        document.getElementById("id").value = std.getId();
+        document.getElementById("code").value = std.getCode();
+        document.getElementById("name").value = std.getName();
+        document.getElementById("editForm").style.display = "block";
+      }
+
+      function handleUpdateStudent() {
+        let id = +document.getElementById("id").value;
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        const index = students.findIndex((student) => student.getId() === id);
+        let student = students[index];
+        student.setId(id);
+        student.setCode(code);
+        student.setName(name);
+        document.getElementById("id").value = "";
+        document.getElementById("code").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("editForm").style.display = "none";
+        displayStudents();
+      }
+
+      displayStudents();
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+    ></script>
+  </body>
+</html>

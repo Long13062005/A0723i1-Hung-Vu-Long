@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt('Input String : ');
+        function checkStr(str) {
+            str = str.split('');
+            let lower = 0;
+            let upper = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] >= 'A' && str[i] <= 'Z') {
+                    upper++;
+                } else  if (str[i] >= 'a' && str[i] <= 'z') {
+                    lower++;
+                }
+            }
+            return upper == lower;
+        }
+        alert(checkStr(str));
+    </script>
+</body>
+</html>

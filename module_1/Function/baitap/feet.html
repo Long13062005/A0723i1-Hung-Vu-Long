@@ -6,42 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Chuyển đổi độ dài</h1>
-    <hr>
-    <div>
-    <label for="foot">Nhập vào đây để chuyển foot qua mét</label>
-    <input id="foot" type="number"/>
-    <button onclick="foottomet1()">Chuyển đổi</button>
-    <p id="foot1"></p>
-    </div>
-    <div>
-    <label for="met">Nhập vào đây để chuyển mét qua foot</label>
-    <input id="met" type="number"/>
-    <button onclick="mettofoot1()">Chuyển đổi</button>
-    <p id="met1"></p>  
-    </div>
-    <script>
-        function foottomet(foot) {
-                        let meter = 0.305 * foot;
-                        return meter;
-                    }
-        function mettofoot(met){
-                        let foot = 3.279 * met; 
-                        return foot ;
-        }
-         
-            
-        function foottomet1(){
-         var a = parseInt(document.getElementById("foot").value);
-         document.getElementById("foot1").innerHTML= foottomet(a) + " m";
-        }
-        function mettofoot1(){
-        var b = parseInt(document.getElementById("met").value);
-        document.getElementById("met1").innerHTML= mettofoot(b) + " ft";
-    }
+   <script>
+    let a = new Date();
+    alert(a);
+   </script>
 
 
-    </script>
     
 </body>
 </html>

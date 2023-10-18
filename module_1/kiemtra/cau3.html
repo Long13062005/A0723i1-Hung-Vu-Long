@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Danh sách sổ tiết kiệm</h1>
+    <button onclick="them()">Thêm sổ tiết kiệm</button>
+    <button onclick="xoa()">Xóa sổ tiết kiệm</button>
+    <table id="danhSach" border="1" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Mã sổ</th>
+                <th>Loại tiết kiệm</th>
+                <th>Họ tên khách hàng</th>
+                <th>Chứng minh nhân dân</th>
+                <th>Ngày mở sổ</th>
+                <th>Số tiền gửi</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        let danhsach = [];
+        class soTietKiem{
+            constructor(maSo,loai,hoTen,cmnd,ngay,soTien) {
+                this.maSo = maSo;
+                this.loai = loai;
+                this.cmnd = cmnd;
+                this.ngay = ngay;
+                this.soTien = soTien;
+            }
+        }
+        function them() {
+            let maSo = checkID();
+            let loai = checkKind();
+            let hoTen = checkName();
+            let cmnd = parseInt(prompt("Nhập chứng minh nhân dân :"));
+            let ngay = checkDate();
+            let soTien = parseInt(prompt("Nhập số tiền"));
+                            let soTietKiem = {
+                                id : maSo,
+                                kind : loai,
+                                name : hoTen,
+                                cmnd : cmnd,
+                                date : ngay,
+                                money : soTien
+                            }
+                            danhsach.push(soTietKiem);
+                            hienthi();
+                                       
+        }
+        function hienthi() {
+            let table = document.getElementById("danhSach");
+            let tbody = table.getElementsByTagName("tbody")[0];
+            for (let soTietKiem of danhsach) {
+                let row = tbody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                let cell4 = row.insertCell(3);
+                let cell5 = row.insertCell(4);
+                let cell6 = row.insertCell(5);
+
+                cell1.textContent = soTietKiem.id;
+                cell2.textContent = soTietKiem.kind;
+                cell3.textContent = soTietKiem.name;
+                cell4.textContent = soTietKiem.cmnd;
+                cell5.textContent = soTietKiem.date;
+                cell6.textContent = soTietKiem.money;
+            }
+        }
+        function xoa() {
+            let maXoa = prompt("Nhập mã cần xóa :");
+            let index = danhsach.findIndex(soTietKiem => soTietKiem.maSo === maXoa);
+            if (index !== -1) {
+                danhsach.splice(index, 1);
+                hienthi();
+            } else {
+                alert("Mã không tồn tại.");
+            }
+        }
+        
+        function checkDate() {
+           while(true) {
+            let date = prompt("Nhập số ngày/tháng/năm theo dd/mm/yyyy");
+            arr= date.split("/");
+           
+           if (arr[0] <= 30 && arr[1] <= 12 ) {
+            return arr.join("/");
+           }
+           else {
+            alert("Không hợp lệ");
+                     }
+                }
+             }
+        function checkID() {
+            while(true) {
+                let id = prompt("Nhập mã sổ");
+                if (id.length <= 5 && id.length >= 0) {
+                    return id;
+                }
+                else {
+                    alert("Không hợp lệ");
+                }
+            }
+        }
+        function checkKind() {
+            while(true) {
+                let id = prompt("Nhập loại tiết kiệm");
+                if (id.length <= 10 && id.length >= 0) {
+                    return id;
+                }
+                else {
+                    alert("Không hợp lệ");
+                }
+            }
+        }
+        function checkName() {
+            while(true) {
+                let id = prompt("Nhập Họ và tên");
+                if (id.length <= 30 && id.length >= 0) {
+                    return id;
+                }
+                else {
+                    alert("Không hợp lệ");
+                }
+            }
+        }
+
+        
+        
+    </script>
+</body>
+</html>
