@@ -112,7 +112,7 @@ public class Main2 {
                     System.out.print("ninety");
                     break;
                 default:
-                    System.out.print("out of ability");
+                    System.out.print("out of ability ");
                     break;
             }
             switch (ones) {
@@ -188,6 +188,9 @@ public class Main2 {
                     break;
             }
             switch (two) {
+                case 1:
+                    System.out.print(" one ");
+                    break;
                 case 2:
                     System.out.print(" twenty ");
                     break;
@@ -213,7 +216,7 @@ public class Main2 {
                     System.out.print(" ninety ");
                     break;
                 default:
-                    System.out.print("out of ability");
+                    System.out.print("and");
                     break;
             }
             switch (ones) {
