@@ -1,4 +1,4 @@
-package File;
+package ReadFile;
 
 public class Country {
 	private int id;
