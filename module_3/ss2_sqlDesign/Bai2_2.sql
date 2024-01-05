@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS QuanLyBanHang;
+USE QuanLyBanHang;
+
+CREATE TABLE customer (
+    cID INT AUTO_INCREMENT PRIMARY KEY,
+    cName NVARCHAR(50) NOT NULL,
+    cAge INT(2) NOT NULL
+);
+
+CREATE TABLE orderCus (
+    oID INT PRIMARY KEY,
+    cID INT NOT NULL,
+    oDate DATE NOT NULL,
+    oTotalprice FLOAT NOT NULL,
+    FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+
+CREATE TABLE orderdetail (
+    oID INT,
+    pID INT,
+    odQTY NVARCHAR(255) NOT NULL,
+    PRIMARY KEY(oID, pID),
+    FOREIGN KEY (oID) REFERENCES orderCus(oID),
+    FOREIGN KEY (pID) REFERENCES product(pID)
+);
+
+CREATE TABLE product (
+    pID INT PRIMARY KEY,
+    pName NVARCHAR(255) NOT NULL,
+    pPrice FLOAT NOT NULL
+);
